@@ -11,7 +11,6 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import visualizer from 'rollup-plugin-visualizer'
-import qiankun from 'vite-plugin-qiankun'
 import { minify } from 'html-minifier'
 import { name } from './package.json'
 
@@ -89,7 +88,6 @@ export default defineConfig({
     }),
     prod && minimizeIndex(),
     prod && visualizer({ brotliSize: true }),
-    qiankun(name, { useDevMode: true }),
   ],
   resolve: {
     alias: {
@@ -97,7 +95,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: process.env.PORT || 3000,
     proxy: {
       [apiPrefix]: {
         target: `http://${process.env.API_SERVER}`,
