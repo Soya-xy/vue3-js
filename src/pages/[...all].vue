@@ -1,3 +1,8 @@
+<script setup>
+const route = useRoute()
+const router = useRouter()
+</script>
+
 <template>
   <div flex items-center justify-center h-full>
     <div>
@@ -20,10 +25,3 @@
 meta:
   layout: empty
 </route>
-
-<script setup>
-import { useRoute, useRouter } from 'vue-router'
-
-const route = useRoute()
-const router = useRouter()
-</script>

@@ -7,17 +7,19 @@
     "$ref": true,
     "$shallowRef": true,
     "$toRef": true,
+    "EffectScope": true,
     "computed": true,
     "createApp": true,
     "customRef": true,
     "defineAsyncComponent": true,
     "defineComponent": true,
     "effectScope": true,
-    "EffectScope": true,
     "getCurrentInstance": true,
     "getCurrentScope": true,
     "h": true,
     "inject": true,
+    "isProxy": true,
+    "isReactive": true,
     "isReadonly": true,
     "isRef": true,
     "markRaw": true,
@@ -57,6 +59,8 @@
     "useRouter": true,
     "useSlots": true,
     "watch": true,
-    "watchEffect": true
+    "watchEffect": true,
+    "watchPostEffect": true,
+    "watchSyncEffect": true
   }
 }

@@ -13,7 +13,8 @@ export function getAccounts(params) {
 }
 
 export function resetPassword(id) {
-  if (typeof id === 'object') id = id.id
+  if (typeof id === 'object')
+    id = id.id
   return api.put(`account/${id}/reset`)
 }
 
