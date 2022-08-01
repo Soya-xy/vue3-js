@@ -1,6 +1,6 @@
-# vue3 arco 模板
+# Vue3 arco template
 
-# Feature
+# Features
 
 - Unocss
 - Vite-plugin
