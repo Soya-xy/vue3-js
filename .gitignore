@@ -1,0 +1,12 @@
+node_modules
+.eslintcache
+.DS_Store
+.vscode
+.idea
+dist
+dist-ssr
+*.local
+*.log
+*.zip
+tmp
+stats.html
