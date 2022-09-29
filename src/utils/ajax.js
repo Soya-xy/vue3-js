@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Toast } from 'vant'
-import router from '~/router'
+import router from '@/router'
 // import store from "@/store";
 // 根据环境不同引入不同api地址
 export const baseApi = import.meta.env.VITE_API_SERVER

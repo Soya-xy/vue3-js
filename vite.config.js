@@ -12,7 +12,6 @@ import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import visualizer from 'rollup-plugin-visualizer'
 import { minify } from 'html-minifier'
-import legacy from '@vitejs/plugin-legacy'
 import { name } from './package.json'
 
 process.env.VITE_APP_NAME = name
@@ -50,10 +49,6 @@ export default defineConfig({
     },
   },
   base: process.env.ROOT,
-  build: {
-    target: 'esnext',
-    minify: 'terser',
-  },
   plugins: [
     vue({
       reactivityTransform: true,
@@ -65,7 +60,10 @@ export default defineConfig({
         'vue-router',
         '@vueuse/core',
         { 'vue-request': ['useRequest', 'usePagination'] },
-        { '~/utils/ajax': ['api'] },
+        { '@/utils/ajax': ['api'] },
+      ],
+      dirs: [
+        './src/api',
       ],
       eslintrc: {
         enabled: true, // Default `false`
@@ -96,15 +94,10 @@ export default defineConfig({
     }),
     prod && minimizeIndex(),
     prod && visualizer({ brotliSize: true }),
-    legacy({
-      polyfills: ['es.array.iterator', 'es.promise', 'es.object.assign', 'es.promise.finally', 'es/global-this'],
-      targets: ['defaults', 'not IE 11'],
-      modernPolyfills: ['es.promise.finally'],
-    }),
   ],
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src'),
       '@i': path.resolve(__dirname, 'src/assets/images'),
     },
   },

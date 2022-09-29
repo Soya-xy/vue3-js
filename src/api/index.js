@@ -1,4 +1,4 @@
-import api from '~/utils/ajax'
+import api from '@/utils/ajax'
 
 export default api
 export const getIndex = () => api.get('/Index/indexData')

@@ -21,7 +21,7 @@
       "vite-plugin-vue-layouts/client"
     ],
     "paths": {
-      "~/*": ["src/*"],
+      "@/*": ["src/*"],
       "@i/*": ["src/assets/images/*"]
     }
   },
