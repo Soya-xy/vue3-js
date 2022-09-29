@@ -39,10 +39,6 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response) => {
     const res = response.data
-    if (res.msg === '请先上传支付宝二维码！') {
-      Toast(res.message || res.msg)
-      return router.replace('/user/alipay')
-    }
     if (res.status === 0 || res.code === 0 || res.result === 0) {
       // // 登录超时,重新登录
       Toast(res.message || res.msg || res.info)
@@ -82,11 +78,6 @@ service.interceptors.response.use(
   },
 )
 
-/**
- * http 请求基础类
- * 参考文档 https://www.kancloud.cn/yunye/axios/234845
- *
- */
 const request = ['post', 'put', 'patch'].reduce((request, method) => {
   /**
    *
